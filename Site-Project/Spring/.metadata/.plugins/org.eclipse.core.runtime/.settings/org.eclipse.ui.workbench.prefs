@@ -1,0 +1,13 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
+content_assist_parameters_background=52,57,61
+content_assist_parameters_foreground=238,238,238
+content_assist_proposals_background=52,57,61
+content_assist_proposals_foreground=238,238,238
+eclipse.preferences.version=1
+org.eclipse.egit.ui.DiffAddBackgroundColor=55,87,32
+org.eclipse.egit.ui.DiffHeadlineBackgroundColor=32,36,37
+org.eclipse.egit.ui.DiffHunkBackgroundColor=32,36,37
+org.eclipse.egit.ui.DiffRemoveBackgroundColor=105,49,49
+org.eclipse.egit.ui.UncommittedChangeForegroundColor=210,220,230
+org.eclipse.search.ui.match.highlight=93,86,76

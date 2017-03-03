@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1150</x>
+      <y>80</y>
+      <w>140</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>SimpleClass
+bg=blue
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>140</x>
+      <y>80</y>
+      <w>280</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>database
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>530</x>
+      <y>90</y>
+      <w>440</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>software
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>160</y>
+      <w>170</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>SPRING
++View Method
++Add property method
++add new user method
++validate method
++update records
+bg=green
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>160</y>
+      <w>170</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>Website
+Sign IN/Sign up
+View sale Listings
+View Holdiay homes
+View rental properties
+Home
+Choose plan
+Contact
+bg=red
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>210</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>330</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>250</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>310</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>120</y>
+      <w>210</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>Mongo DB 
+bg=yellow
+layer=2
+PERSON
++User
++email
++Telephone
++Password
++Address
+
+ADMIN
++Name
++Email
++password
+
+HOUSE
++Rooms
++Bathroom
++Type
++Square Feet
++Address
++Images
++Garden
++Value
++Listing
++Proerty Type</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
