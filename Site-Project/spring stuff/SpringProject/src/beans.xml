@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+    xsi:schemaLocation= "http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/data/mongo
+    http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="sign_up_class" class="Sign_up.sign_up_class">
+
+       <property name="name" value=" print_first_name"/>
+       <property name="sname" value=" print_surname_name"/>
+       <property name="pnum" value=" print_surname_name"/>
+       <property name="email" value=" print_surname_name"/>
+       <property name="pass" value=" print_first_name"/>
+    
+   
+   </bean>
+
+
+   
+</beans>
