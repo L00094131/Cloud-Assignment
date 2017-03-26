@@ -2,12 +2,17 @@ package Sign_up;
 
 public class sign_up_class 
 {
-		   private String first_name;
+		   private int id=0;
+	       private String first_name;
 		   private String Surname;
 		   private String phone_number;
 		   private String e_mail;
 		   private String password;
-		   
+		   public void SetID(int idIN)
+		   {
+			   idIN++;
+			   id = idIN;
+		   }
 		   public void setName(String fname)
 		   {
 		      this.first_name  = fname;
@@ -48,4 +53,10 @@ public class sign_up_class
 		   {
 		      System.out.println("Your password : " + password );
 		   }
+		    @Override
+		    public String toString() {
+		        return String.format(
+		                "Sign_up[id=%s, first_name='%s', Surname='%s' , phone_number='%s', e_mail='%s' , password='%s']",
+		                id, first_name, Surname, phone_number, e_mail, password);
+		    }
 }
