@@ -1,148 +1,98 @@
 package cloud;
 
+/**
+ * The Calculator.java program is for calculating the
+ * price of the house based on location and square feet.
+ * 
+ * @author Eugene Robb - L00094131
+ * @version 1.0
+ * @since 06/04/17
+ */
 public class Calculator {
-	
+
 	private double servicePrice;
 	private double currentPrice;
 	private double finalPrice;
-	// Square feet variables
-	private double smallHousePrice;
-	private double mediumHousePrice;
-	private double largeHousePrice;
-	private double extraLargeHousePrice;
-	// Address variables
-	private double letterkennyPrice;
-	private double buncranaPrice;
-	private double killybegsPrice;
-	private double burtPrice;
-	private double otherPrice;
+	private double houseSize;
 
-	
-	public Calculator(){
-		servicePrice = 250.00;
-		currentPrice = 0.0;
-		finalPrice = 0.0;
-		smallHousePrice = 5000.00;
-		mediumHousePrice = 10000.00;
-		largeHousePrice = 15000.00;
-		extraLargeHousePrice = 20000.00;
-		letterkennyPrice = 250000.00;
-		buncranaPrice = 185000.00;
-		killybegsPrice = 150000.00;
-		burtPrice = 200000.00;
-		otherPrice = 175000.00;
-	}
-	
-	public Calculator(double sP, double cP, double fP, double sH, double mH, double lH, double eLH, double l, double b, double k, double bu, double o){
-		servicePrice = sP;
+	/**
+	 * @param cP
+	 * @param fP
+	 * @param hS
+	 */
+	public Calculator(double cP, double fP, double hS) {
 		currentPrice = cP;
 		finalPrice = fP;
-		smallHousePrice = sH;
-		mediumHousePrice = mH;
-		largeHousePrice = lH;
-		extraLargeHousePrice = eLH;
-		letterkennyPrice = l;
-		buncranaPrice = bu;
-		killybegsPrice = k;
-		burtPrice = b;
-		otherPrice = o;
+		houseSize = hS;
 	}
 
+	/**
+	 * @return
+	 */
 	public double getServiceCharge() {
+		servicePrice = 250.0;
 		return servicePrice;
 	}
 
-	public void setServiceCharge(double serviceCharge) {
-		this.servicePrice = serviceCharge;
-	}
-
+	/**
+	 * @return
+	 */
 	public double getCurrentPrice() {
 		return currentPrice;
 	}
 
-	public void setCurrentPrice(double currentPrice) {
-		this.currentPrice = currentPrice;
+	/**
+	 * @return
+	 */
+	public double getSquareFeet() {
+		return houseSize;
 	}
 
+	/**
+	 * @param houseSize
+	 * @param currentPrice
+	 */
+	public void setSquareFeetPrice(double houseSize, double currentPrice) {
+		if (houseSize <= 120.0) {
+			throw new IllegalArgumentException("Square feet must be reasonable.");
+		}
+		// Small House: min 121.0 - max 2500.0
+		else if (houseSize <= 2500.0) {
+			currentPrice = 5000.0;
+			this.currentPrice = currentPrice;
+		}
+		// Medium House: min 2500.1 - max 3000.0
+		else if (houseSize <= 3000.0) {
+			currentPrice = 10000.0;
+			this.currentPrice = currentPrice;
+		}
+		// Large House: min 3000.1 - max 4000.0
+		else if (houseSize <= 4000.0) {
+			this.currentPrice = 15000.0;
+		}
+		// Extra Large House: min 4000.1 - max 5000.0
+		else if (houseSize <= 5000.0) {
+			this.currentPrice = 20000.0;
+		}
+		// Anything Above: min 5000.1 - no max
+		else {
+			this.currentPrice = 25000.0;
+		}
+		this.houseSize = houseSize;
+	}
+
+	/**
+	 * @return
+	 */
 	public double getFinalPrice() {
 		return finalPrice;
 	}
 
+	/**
+	 * @param finalPrice
+	 */
 	public void setFinalPrice(double finalPrice) {
 		this.finalPrice = finalPrice;
 	}
-
-	public double getSmallHouse() {
-		return smallHousePrice;
-	}
-
-	public void setSmallHouse(double smallHouse) {
-		this.smallHousePrice = smallHouse;
-	}
-
-	public double getMediumHouse() {
-		return mediumHousePrice;
-	}
-
-	public void setMediumHouse(double mediumHouse) {
-		this.mediumHousePrice = mediumHouse;
-	}
-
-	public double getLargeHouse() {
-		return largeHousePrice;
-	}
-
-	public void setLargeHouse(double largeHouse) {
-		this.largeHousePrice = largeHouse;
-	}
-
-	public double getExtraLargeHouse() {
-		return extraLargeHousePrice;
-	}
-
-	public void setExtraLargeHouse(double extraLargeHouse) {
-		this.extraLargeHousePrice = extraLargeHouse;
-	}
-
-	public double getLetterkenny() {
-		return letterkennyPrice;
-	}
-
-	public void setLetterkenny(double letterkenny) {
-		this.letterkennyPrice = letterkenny;
-	}
-
-	public double getBuncrana() {
-		return buncranaPrice;
-	}
-
-	public void setBuncrana(double buncrana) {
-		this.buncranaPrice = buncrana;
-	}
-
-	public double getKillybegs() {
-		return killybegsPrice;
-	}
-
-	public void setKillybegs(double killybegs) {
-		this.killybegsPrice = killybegs;
-	}
-
-	public double getBurt() {
-		return burtPrice;
-	}
-
-	public void setBurt(double burt) {
-		this.burtPrice = burt;
-	}
-
-	public double getOther() {
-		return otherPrice;
-	}
-
-	public void setOther(double other) {
-		this.otherPrice = other;
-	}
-	
 
 }
