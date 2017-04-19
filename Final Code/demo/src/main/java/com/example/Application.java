@@ -24,6 +24,8 @@ public class Application implements CommandLineRunner {
 		repository.deleteAll();
  
 		repository.save(new Sign_up_class("Alice", "Smith", "letterkenny", "087123457","setdffgesr@gmail.com", "aaa"));
+		repository.save(new Sign_up_class("molly", "reilly", "cavan", "0871212354","ertertefg@gmail.com", "bbb"));
+		System.out.println("Done");
 
 	}
     /* System.out.println("Enter first name: ");
