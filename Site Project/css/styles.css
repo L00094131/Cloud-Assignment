@@ -33,6 +33,14 @@ h1, h2, h3{
 	margin:50px 0;
 }
 
+#office{
+	float:left;
+	margin:10px 0;
+}
+
+
+
+
 #social-media{
 	float:right;
 	margin:40px 0;
@@ -54,6 +62,10 @@ h1, h2, h3{
 
 
 #content{
+	float:left;
+}
+
+#advertise-content{
 	float:left;
 	width:100%;
 }
@@ -89,7 +101,8 @@ h1, h2, h3{
 
 #rightside{
 	float:right;
-	width:270px;
+	width:420px;
+	margin-top:55px;
 }
 
 #rightside h2{
@@ -98,13 +111,32 @@ h1, h2, h3{
 
 #rightside p{
 	font-size:12px;
-	line-height:180%;	
+	line-height:70%;	
 }
 
-#rightside li{
-	font-size:12px;
-	line-height:180%;	
+table {
+    width: 100%;
+	border: 1px solid grey;
 }
+
+
+th {
+    height: 50px;
+	margin-left:5px;
+}
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+    padding: 2px;
+    text-align: left;
+}
+
+
 
 #footer{
 	clear:both;

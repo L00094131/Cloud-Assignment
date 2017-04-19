@@ -99,7 +99,8 @@
                 </div>
 
             <div id="banner">
-                 
+             <!-- TemplateBeginEditable name="content" -->
+
     
             <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 900px; height: 300px; overflow: hidden; visibility: hidden;">
 
@@ -141,7 +142,6 @@
             <div id="content-wrapper">
                 <div id="content"> 
 				
-				<!-- TemplateBeginEditable name="content" -->
                     <h1>Welcome</h1>
                     
                     <p>Build R Buy website is currently under construction</p>
