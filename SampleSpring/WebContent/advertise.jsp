@@ -32,13 +32,13 @@
   </div>
   <div id="topnav">
     <ul>
-      <li class="active"><a href='index.html'><span>Home</span></a></li>
+      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
       <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
       <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-      <li class="has-sub"><a href='advertise.html'><span>Advertise</span></a></li>
-      <li class="active"><a href='contact.html'><span>Contact</span></a></li>
-      <li class="has-sub"><a href='about.html'><span>About</span></a></li>
-            <li class="has-sub"><a href='login.html'><span>Login</span></a></li>
+      <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+      <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
+      <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
+            <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
 
     </ul>
   </div>

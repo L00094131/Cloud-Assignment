@@ -1,3 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.mongodb.BasicDBObject"%>
+	<%@page import="com.mongodb.DB"%>
+	<%@page import="com.mongodb.DBCollection"%>
+	<%@page import="com.mongodb.DBCursor"%>
+	<%@page import="com.mongodb.MongoClient"%>
+
+	<%@page import="java.net.ConnectException"%>
+	<%@page import="java.net.UnknownHostException"%>
+
 <!doctype html>
 
 <html>
@@ -32,13 +43,13 @@
   </div>
   <div id="topnav">
     <ul>
-      <li class="active"><a href='index.html'><span>Home</span></a></li>
+      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
       <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
       <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-      <li class="has-sub"><a href='advertise.html'><span>Advertise</span></a></li>
-      <li class="active"><a href='contact.html'><span>Contact</span></a></li>
-      <li class="has-sub"><a href='about.html'><span>About</span></a></li>
-      <li class="has-sub"><a href='login.html'><span>Login</span></a></li>
+      <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+      <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
+      <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
+      <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
     </ul>
   </div>
   <div id="content-wrapper">
@@ -46,27 +57,50 @@
       <h1>Login</h1>
       <p>Please enter your username and password below</p>
       <div id="contact-form">
-        <form method="post" action="" name="form3" id="my_login_form">
-          <ol>
-            <li>
-              <label for="User Name">User Name</label>
-              <input type="text" name="user_name">
-            </li>
-            <li>
-              <label for="password">Password</label>
-              <input type="text" name="password">
-            </li>
-            <li>
-              <input class="submit" type="submit" name="submit" value="Submit">
-            </li>
-            <p>Don't have an account? Click <a href='signup.html'><span>here</span></a> to sign up.</p>
-
-          </ol>
-
-        </form>
+ 		<form action="login.jsp" method="GET">
+ 		E-Mail: <input type="text" email="Email">
+ 		<br/>
+ 		Password: <input type="text" password="password"/>
+ 		<br/>
+ 		<input type="submit" value="Submit"/>
       </div>
     </div>
   </div>
+<%  MongoClient m1 = new MongoClient("localhost");
+	DB db = m1.getDB("test");
+	DBCollection coll = db.getCollection("sign_up_class");
+	DBCursor valid;
+	BasicDBObject dbo = new BasicDBObject();
+
+	dbo.put("Email", );
+	valid = coll.find(dbo);
+	
+	//dbo.put("Password", request.getParameter("password"));
+	//valid = coll.find(dbo);
+	
+	if(valid.hasNext()){
+		System.out.println("Login Successful");
+	}
+	else
+		System.out.println("Login Failed");
+	//dbo.put("password", request.getParameter("password"));
+	//valid1 = coll.find(dbo);
+	
+	/*try{
+		if(valid.hasNext()){
+			System.out.println("Login Successful");
+		}
+		else
+			System.out.println("Login Failed");
+		}
+	catch(Exception exe){
+		System.out.println("Error: " + exe.getStackTrace());
+	}
+	finally{
+			m1.close();
+			valid.close();
+		}*/
+ %>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
