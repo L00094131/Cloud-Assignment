@@ -1,4 +1,4 @@
-<%@ page import="com.sample.controller.Calculator" %>
+<%@ page import="com.sample.controller.Calculator"%>
 
 
 <html>
@@ -7,8 +7,33 @@
 
 
 
-Setting square feet price: to 4663.0 <% Calculator.setSquareFeetPrice(4663.0);%>
-Square foot price: <%= Calculator.getSquareFootPrice() %>
+
+	<br />
+
+
+
+
+
+	<FORM NAME="form1" METHOD="POST">
+		Address: <input type="text" name="address" />
+		<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Button 1">
+	</FORM>
+	<%
+		if (request.getParameter("submit") != null) {
+	%>
+	Final Price:
+	<%
+	String address = request.getParameter("address");
+	Calculator.setTownPrice(address);
+	%>
+	
+	
+	<%=Calculator.getFinalPrice()%>
+
+	<%
+		}
+	%>
+
 
 </body>
 
