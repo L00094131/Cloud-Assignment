@@ -22,8 +22,10 @@
 	DBCursor valid;
 	DBCursor valid1;
 	BasicDBObject dbo = new BasicDBObject();
+	
+	String mail = request.getParameter("Email");
 
-	dbo.put("Email", request.getParameter(""));
+	dbo.put("Email", mail);
 	valid = coll.find(dbo);
 	
 	//dbo.put("Password", request.getParameter("password"));

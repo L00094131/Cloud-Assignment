@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.mongodb.BasicDBObject"%>
+	<%@page import="com.mongodb.DB"%>
+	<%@page import="com.mongodb.DBCollection"%>
+	<%@page import="com.mongodb.DBCursor"%>
+	<%@page import="com.mongodb.MongoClient"%>
+
+	<%@page import="java.net.ConnectException"%>
+	<%@page import="java.net.UnknownHostException"%>
 <!doctype html>
 
 <html>
@@ -51,19 +61,27 @@
           <ol>
             <li>
               <label for="first-name">First Name</label>
-              <input type="text" name="full_name">
+              <input type="text" name="firstName">
             </li>
             <li>
               <label for="Sur-name">Surname</label>
-              <input type="text" name="full_name">
+              <input type="text" name="surname">
             </li>
-            <li>
-              <label for="email">E-mail</label>
-              <input type="text" name="email">
+             <li>
+              <label for="address">Address</label>
+              <input type="text" name="address">
             </li>
             <li>
               <label for="phone">Phone</label>
-              <input type="text" name="phone">
+              <input type="text" name="phoneNumber">
+            </li>
+            <li>
+              <label for="email">E-mail</label>
+              <input type="text" name="Email">
+            </li>
+            <li>
+              <label for="password">Password</label>
+              <input type="text" name="password">
             </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="submit">
@@ -73,6 +91,22 @@
       </div>
     </div>
   </div>
+ <%  MongoClient m1 = new MongoClient("localhost");
+	DB db = m1.getDB("test");
+	DBCollection coll = db.getCollection("sign_up_class");
+	DBCursor valid;
+	DBCursor valid1;
+	BasicDBObject dbo = new BasicDBObject();
+	
+    dbo.append("FirstName", request.getParameter("firstName"));
+    dbo.append("surname", request.getParameter("surname"));
+    dbo.append("Address", request.getParameter("address"));
+    dbo.append("phoneNumber",request.getParameter("phoneNumber"));
+    dbo.append("Email",request.getParameter("Email"));
+    dbo.append("password",request.getParameter("password"));
+    coll.insert(dbo);
+    System.out.println("Document inserted successfully");
+	%>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>

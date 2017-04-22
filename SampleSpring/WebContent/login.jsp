@@ -57,36 +57,35 @@
       <h1>Login</h1>
       <p>Please enter your username and password below</p>
       <div id="contact-form">
- 		<form action="login.jsp" method="GET">
- 		E-Mail: <input type="text" email="Email">
- 		<br/>
- 		Password: <input type="text" password="password"/>
- 		<br/>
- 		<input type="submit" value="Submit"/>
+ 		<form method="POST" action="" name="form3" id="login">
+ 		<ol>
+            <li>
+              <label for="Email">E-Mail</label>
+              <input type="text" name="Email">
+            </li>
+            <li>
+              <label for="password">Password</label>
+              <input type="text" name="password">
+            </li>
+            <li>
+              <input class="submit" type="submit" name="Submit" value="Login">
+            </li>
+          </ol>
       </div>
     </div>
   </div>
-<%  MongoClient m1 = new MongoClient("localhost");
+   <%  MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
 	DBCollection coll = db.getCollection("sign_up_class");
 	DBCursor valid;
+	DBCursor valid1;
 	BasicDBObject dbo = new BasicDBObject();
 
-	dbo.put("Email", );
-	valid = coll.find(dbo);
-	
-	//dbo.put("Password", request.getParameter("password"));
-	//valid = coll.find(dbo);
-	
-	if(valid.hasNext()){
-		System.out.println("Login Successful");
-	}
-	else
-		System.out.println("Login Failed");
-	//dbo.put("password", request.getParameter("password"));
-	//valid1 = coll.find(dbo);
-	
-	/*try{
+    dbo.append("Email",request.getParameter("Email"));
+    valid = coll.find(dbo);
+    dbo.append("password",request.getParameter("password"));
+    valid = coll.find(dbo);
+    try{
 		if(valid.hasNext()){
 			System.out.println("Login Successful");
 		}
@@ -99,8 +98,8 @@
 	finally{
 			m1.close();
 			valid.close();
-		}*/
- %>
+		}
+	%>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>

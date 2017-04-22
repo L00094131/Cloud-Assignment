@@ -170,9 +170,6 @@ th, td {
 	list-style-type:none;
 }
 
-#calculator-form ol li{
-	list-style-type:none;
-}
 
 input, textarea{
 	display:block;

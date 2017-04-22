@@ -46,9 +46,9 @@
     <div id="advertise-content">
       <h1>Advertise</h1>
       <h4>Advertise Your Property Here</h4>
-      <p><a href='index.html'><span>BuildRBuy.ie</span></a> is the North West's largest property website. 9 out of every 10 properties for sale in the North West are advertised on here.</p>
+      <p><a href='index.jsp'><span>BuildRBuy.ie</span></a> is the North West's largest property website. 9 out of every 10 properties for sale in the North West are advertised on here.</p>
       <p>We are glad that you have chosen to sell your house with us! Our price plans are tailored to suit the needs of each customer. Please take a look at our price plans below.. </p>
-      <p> If you need assistance don't hesitate to <a href='contact.html'><span>Contact Us</span></a>.</p>
+      <p> If you need assistance don't hesitate to <a href='contact.jsp'><span>Contact Us</span></a>.</p>
       <h4>Price Plans</h4>
       <div id="table">
         <table style="width:100%">
