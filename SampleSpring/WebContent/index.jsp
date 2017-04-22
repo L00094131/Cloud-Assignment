@@ -1,4 +1,5 @@
 <!doctype html>
+<%@ page import="com.sample.controller.Calculator" %>
 
 <html>
 	<head>
@@ -57,7 +58,7 @@
 	<body>
     <div id="wrapper">
       <div id="top">
-        <div id="logo"><a href='index.html'> <img src="images/logo.jpg"></a> </div>
+        <div id="logo"><a href='index.jsp'> <img src="images/logo.jpg"></a> </div>
         <div id="social-media">
           <p>For Additional Information<br>
             Please Call 123456789</p>
@@ -77,8 +78,7 @@
           <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
           <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
           <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
-                <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
-
+          <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
         </ul>
       </div>
       <div id="banner">
@@ -103,11 +103,52 @@
       <div id="content-wrapper">
         <div id="content">
           <h1>Welcome To Build 'R' Buy</h1>
-          
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2291.280075589289!2d-7.739189584363736!3d54.95064778034645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485f94ccc1511609%3A0x94ae4d838a4b6d17!2sMain+Street!5e0!3m2!1sen!2sie!4v1486675945524" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-          
+                    
+      <div id="contact-form">
+          <h2>Try out price calculator</h2>
+          <p>Our price calculator use a state of the art algorithm to calculate the price of your property. Enter in your house details below to calculate your price</p>		
+ 
+		 
+		 <form method="post" action="" name=calculator-form>
+          <ol>
+            <li>
+              <label for="address">Address</label>
+              <input type="text" name="address">
+            </li>
+            <li>
+              <label for="square_feet">Size (Square feet)</label>
+              <input type="text" name="square_feet">
+            </li>
+            <li>
+              <input class="submit" type="submit" name="submit" value="Calculate">
+            </li>
+          </ol>
+        </form>
+        		<%
+			if (request.getParameter("submit") != null) {
+		%>
+		<p>Final Price:
+		<%
+		String address = request.getParameter("address");
+		String square = request.getParameter("square_feet");
+		Calculator.setTownPrice(address);
+		Calculator.SetSquareFeet(square);
+		%>
+		
+		
+		<%=Calculator.getFinalPrice()%>
+	
+		<%
+			}
+		%>		
+		</div>
+		</div>
+		</p>
+        <div id="rightside">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2291.280075589289!2d-7.739189584363736!3d54.95064778034645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485f94ccc1511609%3A0x94ae4d838a4b6d17!2sMain+Street!5e0!3m2!1sen!2sie!4v1486675945524" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
-      </div>
+          </div>
+      
       <div id="footer">
         <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
       </div>

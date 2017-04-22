@@ -13,10 +13,11 @@ public class Calculator {
 
 	private static double servicePrice = 250.0;
 	private static double squareFootPrice;
-	private double townPrice;
-	private double finalPrice;
+	private static double townPrice;
+	private static double finalPrice;
 	private static double houseSize;
-	private String town;
+	private static String town;
+	private static String sq;
 
 	/**
 	 * @param sFP
@@ -72,6 +73,37 @@ public class Calculator {
 	 *            The size of the house in square feet.
 	 * @return 
 	 */
+	public static void SetSquareFeet(String sfin)
+	{
+		sq = sfin;
+		double value = Double.parseDouble(sq);
+		houseSize = value;
+		if (houseSize <= 120.0) {
+			throw new IllegalArgumentException("Square feet must be reasonable.");
+		}
+		// Small House: min 121.0 - max 2500.0
+		else if (houseSize <= 2500.0) {
+			squareFootPrice = 5000.0;
+		}
+		// Medium House: min 2500.1 - max 3000.0
+		else if (houseSize <= 3000.0) {
+			squareFootPrice = 10000.0;
+		}
+		// Large House: min 3000.1 - max 4000.0
+		else if (houseSize <= 4000.0) {
+			squareFootPrice = 15000.0;
+		}
+		// Extra Large House: min 4000.1 - max 5000.0
+		else if (houseSize >= 5000.0) {
+			squareFootPrice = 20000.0;
+		}
+		// Anything Above: min 5000.1 - no max
+		else {
+			squareFootPrice = 25000.0;
+		}
+		
+	}
+	
 	public static void setSquareFeetPrice(double houseSize) {
 		if (houseSize <= 120.0) {
 			throw new IllegalArgumentException("Square feet must be reasonable.");
@@ -96,7 +128,6 @@ public class Calculator {
 		else {
 			squareFootPrice = 25000.0;
 		}
-		houseSize = houseSize;
 	}
 
 	/**
@@ -104,7 +135,7 @@ public class Calculator {
 	 * 
 	 * @return A String representing the property's town.
 	 */
-	public String getTown() {
+	public static String getTown() {
 		return town;
 	}
 
@@ -116,7 +147,7 @@ public class Calculator {
 	 *            The name of the town.
 	 * @return A boolean variable which represents true or false.
 	 */
-	public boolean validateTown(String town) {
+	public static boolean validateTown(String town) {
 		return town.matches("^\\p{L}+[\\p{L}\\p{Z}\\p{P}]{0,}");
 	}
 
@@ -126,29 +157,29 @@ public class Calculator {
 	 * @param town
 	 *            A String value representing the town name.
 	 */
-	public void setTownPrice(String town) {
+
+	public static void setTownPrice(String town) {
 		if (validateTown(town)) {
-			if (town == "burt" || town == "Burt") {
+			if (town.contains("burt") || town.contains("Burt")) {
 				townPrice = 200000.00;
-			} else if (town == "letterkenny" || town == "Letterkenny") {
+			} else if (town.contains("letterkenny") || town.contains("Letterkenny")) {
 				townPrice = 250000.00;
-			} else if (town == "donegal town" || town == "Donegal Town") {
+			} else if (town.contains("donegal town") || town.contains("Donegal Town")) {
 				townPrice = 220000.00;
-			} else if (town == "killybegs" || town == "Killybegs") {
+			} else if (town.contains("killybegs") || town.contains("Killybegs")) {
 				townPrice = 212500.00;
-			} else if (town == "buncrana" || town == "Buncrana") {
+			} else if (town.contains("buncrana") || town.contains("Buncrana")) {
 				townPrice = 255500.00;
-			} else if (town == "quigley's point" || town == "Quigley's Point" || town == "quigleys point"
-					|| town == "Quigleys Point") {
+			} else if (town.contains("quigley's point") || town.contains("Quigley's Point") || town.contains("quigleys point")
+					|| town.contains("Quigleys Point")) {
 				townPrice = 194500.00;
-			} else if (town == "st. johnston" || town == "St. Johnston") {
+			} else if (town.contains("st. johnston") || town.contains("St. Johnston")) {
 				townPrice = 205500.00;
-			} else if (town == "bundoran" || town == "Bundoran") {
+			} else if (town.contains("bundoran") || town.contains("Bundoran")) {
 				townPrice = 205000.00;
 			} else {
 				townPrice = 195500.00;
 			}
-			town = town;
 		}
 		else {
 			throw new IllegalArgumentException("Town name can only be alphabetic with apostrophe or hyphen.", null);
@@ -160,7 +191,7 @@ public class Calculator {
 	 * 
 	 * @return A double value representing the town price.
 	 */
-	public double getTownPrice() {
+	public static double getTownPrice() {
 		return townPrice;
 	}
 
@@ -169,8 +200,8 @@ public class Calculator {
 	 * 
 	 * @return A double value representing the final price.
 	 */
-	public double getFinalPrice() {
-		finalPrice = this.squareFootPrice + this.townPrice + this.servicePrice;
+	public static double getFinalPrice() {
+		finalPrice = squareFootPrice + townPrice + servicePrice;
 		return finalPrice;
 	}
 
