@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.mongodb.BasicDBObject"%>
+	<%@page import="com.mongodb.DB"%>
+	<%@page import="com.mongodb.DBCollection"%>
+	<%@page import="com.mongodb.DBCursor"%>
+	<%@page import="com.mongodb.MongoClient"%>
+
+	<%@page import="java.net.ConnectException"%>
+	<%@page import="java.net.UnknownHostException"%>
 <!doctype html>
 
 <html>
@@ -53,6 +63,29 @@
     <div id="content">
       <h1>Inbox</h1>
       <br/>
+     <%MongoClient m1 = new MongoClient("localhost");
+	DB db = m1.getDB("test");
+	DBCollection coll = db.getCollection("admin_replies");
+	DBCursor valid;
+	BasicDBObject dbo = new BasicDBObject();
+	//BasicDBObject db = new BasicDBObject();
+	dbo.put("E_mail", "eugene@gmail.com");
+    //db.put("Address1", "drumowna");
+    DBCursor cursor = coll.find(dbo);
+    
+	int i = 1;
+	try{
+	
+    while (cursor.hasNext()) { 
+       out.println("<br/>Email: "+i); 
+       out.println(" <br/>"+cursor.next().toString()); 
+    }
+   }
+   finally{
+	   m1.close();
+   }
+       
+    %>
       </div>
   </div>
   <div id="footer">

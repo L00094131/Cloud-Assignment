@@ -47,7 +47,7 @@
           <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
           <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
           <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
-                <li class="has-sub"><a href='login.html'><span>Login</span></a></li>
+                <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
 
     </ul>
   </div>
@@ -60,20 +60,19 @@
 	DBCollection coll = db.getCollection("property_class");
 	DBCursor valid;
 	BasicDBObject dbo = new BasicDBObject();
+	BasicDBObject dba = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
 	dbo.put("property_type", "for sale");
+	dba.get("Address1");
     //db.put("Address1", "drumowna");
-    DBCursor cursor = coll.find(dbo);
-	
+    DBCursor cursor = coll.find(dbo);	
     
-
-		
 	int i = 1;
 	try{
 	
-    while (cursor.hasNext()) { 
+    while (cursor.hasNext()) {
        out.println("<br/>Property: "+i); 
-       out.println("<br/>"+cursor.next()); 
+       out.println("<br/>"+cursor.next());
     }
 	
    }

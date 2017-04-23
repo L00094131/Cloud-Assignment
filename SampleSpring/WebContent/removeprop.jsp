@@ -106,6 +106,7 @@
    }
 
 	%>
+</div>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
