@@ -17,7 +17,7 @@ public class Calculator {
 	private static double finalPrice;
 	private static double houseSize;
 	private static String town;
-	private static String sq;
+	private static String userInput;
 
 	/**
 	 * @param sFP
@@ -69,66 +69,41 @@ public class Calculator {
 	/**
 	 * Sets the square foot price of the property.
 	 * 
-	 * @param houseSize
-	 *            The size of the house in square feet.
-	 * @return 
+	 * @param price
+	 *            The price of the house. 
 	 */
-	public static void SetSquareFeet(String sfin)
+	public static void setSquareFeet(String price)
 	{
-		sq = sfin;
-		double value = Double.parseDouble(sq);
+		//convert string to double
+		userInput = price;
+		double value = Double.parseDouble(userInput);
 		houseSize = value;
 		if (houseSize <= 120.0) {
 			throw new IllegalArgumentException("Square feet must be reasonable.");
 		}
 		// Small House: min 121.0 - max 2500.0
 		else if (houseSize <= 2500.0) {
-			squareFootPrice = 5000.0;
+			squareFootPrice = 15000.0;
 		}
 		// Medium House: min 2500.1 - max 3000.0
 		else if (houseSize <= 3000.0) {
-			squareFootPrice = 10000.0;
+			squareFootPrice = 20000.0;
 		}
 		// Large House: min 3000.1 - max 4000.0
 		else if (houseSize <= 4000.0) {
-			squareFootPrice = 15000.0;
+			squareFootPrice = 25000.0;
 		}
 		// Extra Large House: min 4000.1 - max 5000.0
-		else if (houseSize >= 5000.0) {
-			squareFootPrice = 20000.0;
+		else if (houseSize <= 5000.0) {
+			squareFootPrice = 30000.0;
 		}
 		// Anything Above: min 5000.1 - no max
 		else {
-			squareFootPrice = 25000.0;
+			squareFootPrice = 35000.0;
 		}
 		
 	}
 	
-	public static void setSquareFeetPrice(double houseSize) {
-		if (houseSize <= 120.0) {
-			throw new IllegalArgumentException("Square feet must be reasonable.");
-		}
-		// Small House: min 121.0 - max 2500.0
-		else if (houseSize <= 2500.0) {
-			squareFootPrice = 5000.0;
-		}
-		// Medium House: min 2500.1 - max 3000.0
-		else if (houseSize <= 3000.0) {
-			squareFootPrice = 10000.0;
-		}
-		// Large House: min 3000.1 - max 4000.0
-		else if (houseSize <= 4000.0) {
-			squareFootPrice = 15000.0;
-		}
-		// Extra Large House: min 4000.1 - max 5000.0
-		else if (houseSize <= 5000.0) {
-			squareFootPrice = 20000.0;
-		}
-		// Anything Above: min 5000.1 - no max
-		else {
-			squareFootPrice = 25000.0;
-		}
-	}
 
 	/**
 	 * Gets the town name.
