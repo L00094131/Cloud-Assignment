@@ -13,7 +13,7 @@
 <html>
 <head>
 <script src="js/jquery.js" type="text/javascript"></script>
-<title>Build 'R' Buy - View Property</title>
+<title>Build 'R' Buy - Arrange Viewing</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/slider.js"></script>
@@ -43,11 +43,16 @@
   <div id="topnav" class="wrap">
     <ul id="nav">
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+          <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
       <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
-      <li class="has-sub"><a href='about.html'><span>About</span></a></li>
+      <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
       <li class="has-sub"><a href="#"><span>Options</span></a>
 			<ul>
                 <li><a href='addprop.jsp'>Add Property</a></li>

@@ -20,7 +20,7 @@
 <body>
 <div id="wrapper">
   <div id="top">
-    <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
+    <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
     <div id="social-media">
       <p>For Additional Information<br>
         Please Call 123456789</p>
@@ -34,13 +34,18 @@
   </div>
   <div id="topnav">
     <ul>
-          <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-          <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-          <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+          <li class="active"><a href='index.jsp'><span>Home</span></a></li>          
+          <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
           <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
           <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
           <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
-                <li class="has-sub"><a href='login.html'><span>Login</span></a></li>
+          <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
 
     </ul>
   </div>
@@ -54,8 +59,8 @@
       <p>BuildRBuy.ie, the North-Wests largest property website, was founded in 2010 by Frank Sinatra's 2nd Cousin Twice Removed. Build R Buy has revolutionised how consumers in Ireland find property. We have various sections - for sale, for rent, holiday homes. Today, thousands of customers in Ireland and across the world regularly advertise properties on the site.</p>
       <h4>Our Team</h4>
       <p>Build'R'Buy employs a team of over 40 and it's a great place to work. Our office environment is spacious and modern, the people are creative and dynamic, and the work is challenging. Above all, it's fun to work here. We're always on the lookout for good talent. We are currently growing and recruiting, so why not apply. Send CV's directly to hire@buildRBuy.ie.</p>
-          <h4>Location</h4>
-	<p>Build'R'Buy is based in the heart of Donegal, just south of Letterkenny's Main Street. It's a modern airy open plan office right beside the Radisson Hotel. We believe in providing an open working environment and have fitted out the building to the highest standards. <a href='contact.html'><span>Contact Us</span></a>.</p>
+      <h4>Location</h4>
+	<p>Build'R'Buy is based in the heart of Donegal, just south of Letterkenny's Main Street. It's a modern airy open plan office right beside the Radisson Hotel. We believe in providing an open working environment and have fitted out the building to the highest standards. <a href='contact.jsp'><span>Contact Us</span></a>.</p>
     </div>
   </div>
   <div id="footer">

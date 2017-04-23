@@ -18,7 +18,7 @@
 <body>
 <div id="wrapper">
   <div id="top">
-    <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
+    <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
     <div id="social-media">
       <p>For Additional Information<br>
         Please Call 123456789</p>
@@ -32,12 +32,17 @@
   </div>
   <div id="topnav">
     <ul>
-      <li class="active"><a href='index.html'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-      <li class="has-sub"><a href='advertise.html'><span>Advertise</span></a></li>
-      <li class="active"><a href='contact.html'><span>Contact</span></a></li>
-      <li class="has-sub"><a href='about.html'><span>About</span></a></li>
+      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
+      <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
+     <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+      <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
+      <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
       <li class="has-sub"><a href="#"><span>Options</span></a>
 	  <ul>
             <li><a href='addprop.jsp'>Add Property</a></li>

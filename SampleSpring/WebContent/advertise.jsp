@@ -18,7 +18,7 @@
 <body>
 <div id="wrapper">
   <div id="top">
-    <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
+    <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
     <div id="social-media">
       <p>For Additional Information<br>
         Please Call 123456789</p>
@@ -33,9 +33,14 @@
   <div id="topnav">
     <ul>
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-      <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+          <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
+          <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
             <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
@@ -72,33 +77,33 @@
           </tr>
           <tr>
             <td>Unlimited Number of Images</td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
           </tr>
           <tr>
             <td>Priority Status</td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
             <td><img src="images/X.jpg"height="42" width="42"></td>
           </tr>
           <tr>
             <td>3 Visible Photos</td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
             <td><img src="images/X.jpg"height="42" width="42"></td>
           </tr>
           <tr>
             <td>24 Hour Contact</td>
-            <td><img src="images/tick.jpg"height="42" width="42"></td>
+            <td><img src="images/tick.JPG"height="42" width="42"></td>
             <td><img src="images/X.jpg"height="42" width="42"></td>
             <td><img src="images/X.jpg"height="42" width="42"></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td><button onclick="window.location.href='login.html'">Choose me!!!</button></td>
-            <td><button onclick="window.location.href='login.html'">Choose me!!!</button></td>
-            <td><button onclick="window.location.href='login.html'">Choose me!!!</button></td>
+            <td><button onclick="window.location='https://www.paypal.com/ie/home';">Choose me!!</button></td>
+            <td><button onclick="window.location='https://www.paypal.com/ie/home';">Choose me!!</button></td>
+            <td><button onclick="window.location='https://www.paypal.com/ie/home';">Choose me!!</button></td>
           </tr>
         </table>
         <br>

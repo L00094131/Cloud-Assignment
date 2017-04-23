@@ -13,7 +13,7 @@
 <html>
 <head>
 <script src="js/jquery.js" type="text/javascript"></script>
-<title>Build 'R' Buy - Sign-Up</title>
+<title>Build 'R' Buy - Add Property</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/slider.js"></script>
@@ -28,7 +28,7 @@
 <body>
 <div id="wrapper">
 <div id="top">
-  <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
+  <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
   <div id="social-media">
     <p>For Additional Information<br>
       Please Call 123456789</p>
@@ -42,17 +42,22 @@
 </div>
 <div id="topnav">
   <ul>
-    <li class="active"><a href='index.html'><span>Home</span></a></li>
-    <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-    <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-    <li class="has-sub"><a href='advertise.html'><span>Advertise</span></a></li>
-    <li class="active"><a href='contact.html'><span>Contact</span></a></li>
-    <li class="has-sub"><a href='about.html'><span>About</span></a></li>
-    <li class="has-sub"><a href='login.html'><span>Login</span></a></li>
+    <li class="active"><a href='index.jsp'><span>Home</span></a></li>
+          <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>    
+    <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+    <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
+    <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
+    <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
   </ul>
 </div>
 <div id="content-wrapper">
-  <div id="advertise-content">
+  <div id="content">
       <h1>Add a Property</h1>
       <p>Please fill in the details about your property below</p>
       <div id="contact-form">
@@ -105,7 +110,6 @@
         </form>
       </div>
     </div>
-  </div>
   <%  
  
     MongoClient m1 = new MongoClient("localhost");
@@ -125,10 +129,36 @@
 	dbo.append("BER_Rating", request.getParameter("ber"));
 	dbo.append("Asking_Price", request.getParameter("askp"));
 	coll.insert(dbo);
-	System.out.print("successfull");
-	out.print(dbo.get("Address1"));
 	%>
 	
+	<div id="rightside">
+        <img src="images/sell-property.jpg">
+        <h2>Why add your property?</h2>
+		<ul>
+			<li>A Property Upgrade</li>
+				<p>One of the primary reasons for selling a property is because you are</p>
+				<p>on the hunt for something bigger and better. If you have a growing</p> 
+				<p>family, for example, your current two bedroom bungalow may be too</p> 
+				<p>small. This could lead to the need to find something with more space.</p> 
+				<p>In addition to a growing family, an increase in income due to a </p>
+				<p>promotion or a change in career could also allow you to make an </p>
+				<p>upgrade into a new price bracket of property.</p>
+			<li>A Property Downgrade</li>
+				<p>On the other hand, some people will wish to sell their property to</p>
+				<p>move into something smaller. This is common amongst empty-nesters,</p>
+				<p>or older couples whose children have moved out of the home. They </p> 
+				<p>no longer need all of the space and can sell their larger home</p>
+				<p>for something smaller, cosier, and more affordable.</p>
+			<li>A Change In Job</li>
+				<p>Changes in career can be a major reason to move. If you are offered</p>
+				<p>a job in a different location and don't want to face a long commute,</p>
+				<p> the best option may be to sell your house. You can find something</p>
+				<p> more local to your new job and save the money on petrol.</p>			
+		</ul>        
+        
+		
+        </div>
+	</div>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>

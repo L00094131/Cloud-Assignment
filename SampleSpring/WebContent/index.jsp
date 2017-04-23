@@ -73,12 +73,17 @@
       <div id="topnav">
         <ul>
           <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-          <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-          <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+          <li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
           <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
           <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
           <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
-                <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
+          <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
 
         </ul>
       </div>
@@ -104,7 +109,9 @@
       <div id="content-wrapper">
         <div id="content">
           <h1>Welcome To Build 'R' Buy</h1>
-          
+          <h2>Who are we?</h2>
+          <p>BuildRBuy.ie, the North-Wests largest property website, was founded in 2010 by <br/>Frank Sinatra's 2nd Cousin Twice Removed. Build R Buy has revolutionised </br> how consumers in Ireland find property. We have various sections - for sale, </br>for rent, holiday homes. Today, thousands of customers in Ireland and across the</br> world regularly advertise properties on the site.</p>
+               
           
           <h2>Use our calculator function</h2>
           <p>Our price calculator use a state of the art algorithm to calculate the price of<br/>your property. Enter in your house details below to calculate your price</p>		
@@ -128,7 +135,7 @@
         <%
 			if (request.getParameter("submit") != null) {
 		%>
-		<b>Final Price:
+		<b></br>Final Price:
 		<%
 		String address = request.getParameter("address");
 		String square = request.getParameter("square_feet");

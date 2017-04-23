@@ -43,8 +43,13 @@
   <div id="topnav" class="wrap">
     <ul id="nav">
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+		<li class="has-sub"><a href='#'><span>View Properties</span>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li>
       <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
@@ -61,7 +66,8 @@
   </div>
   <div id="content-wrapper">
 	      <div id="contact-form">
-	      <h1>Remove Proerty</h1>
+	      <h1>Remove Property</h1>
+	      
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
           <li>
@@ -76,7 +82,7 @@
         </form>
       </div>
   </div>
-  </div>
+  
    <% MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
 	DBCollection coll = db.getCollection("property_class");
@@ -106,7 +112,7 @@
    }
 
 	%>
-</div>
+	
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
