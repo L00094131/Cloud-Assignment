@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.mongodb.BasicDBObject"%>
+	<%@page import="com.mongodb.DB"%>
+	<%@page import="com.mongodb.DBCollection"%>
+	<%@page import="com.mongodb.DBCursor"%>
+	<%@page import="com.mongodb.MongoClient"%>
+
+	<%@page import="java.net.ConnectException"%>
+	<%@page import="java.net.UnknownHostException"%>
 <!doctype html>
 
 <html>
@@ -33,7 +43,7 @@
   <div id="topnav">
     <ul>
           <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-          <li class="has-sub"><a href='#'><span>View Properties</span>
+          <li class="has-sub"><a href='#'><span>View Properties</span></a>
             <ul>
               <li><a href='forsale.jsp'>For Sale</a></li>
               <li><a href='forrent.jsp'>For Rent</a></li>
@@ -66,8 +76,9 @@
               <input type="text" name="phone">
             </li>
             <li>
-              <label for="message">Message</label>
-              <textarea name="message"></textarea>
+               <label for="message" size=25%>Messsage</label>
+              <input type="text" name="mess" >
+              
             </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="submit">
@@ -76,6 +87,31 @@
         </form>
       </div>
     </div>
+     <%  MongoClient m1 = new MongoClient("localhost");
+	DB db = m1.getDB("test");
+	DBCollection coll = db.getCollection("contact");
+	DBCursor valid;
+	DBCursor valid1;
+	BasicDBObject dbo = new BasicDBObject();
+	if( request.getParameter("full_name") != null)
+	{
+    dbo.append("full_name", request.getParameter("full_name"));
+	}
+	if( request.getParameter("email") != null)
+	{
+    dbo.append("email", request.getParameter("email"));
+	}
+	if( request.getParameter("phone") != null)
+	{
+    dbo.append("phone", request.getParameter("phone"));
+	}
+	if( request.getParameter("mess") != null)
+	{
+    dbo.append("message",request.getParameter("mess"));
+	}
+    coll.insert(dbo);
+    System.out.println("Document inserted successfully");
+	%>
     <div id="rightside">
       <h2>Useful information</h2>
       <p><b>General Comments: </b>Have questions or comments? <a href='#'>info@buildRbuy.ie</a></p>

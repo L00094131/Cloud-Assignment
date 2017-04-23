@@ -34,7 +34,7 @@
     <ul id="nav">
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>View Properties</span>
+      <li class="has-sub"><a href='#'><span>View Properties</span></a>
             <ul>
               <li><a href='forsale.jsp'>For Sale</a></li>
               <li><a href='forrent.jsp'>For Rent</a></li>
