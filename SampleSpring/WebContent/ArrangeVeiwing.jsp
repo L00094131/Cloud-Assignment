@@ -5,8 +5,6 @@
 	<%@page import="com.mongodb.DBCollection"%>
 	<%@page import="com.mongodb.DBCursor"%>
 	<%@page import="com.mongodb.MongoClient"%>
-	<%@page import="com.mongodb.DBObject"%>
-	<%@page import="com.mongodb.Mongo"%>
 
 	<%@page import="java.net.ConnectException"%>
 	<%@page import="java.net.UnknownHostException"%>
@@ -15,7 +13,7 @@
 <html>
 <head>
 <script src="js/jquery.js" type="text/javascript"></script>
-<title>Build 'R' Buy - Update Property</title>
+<title>Build 'R' Buy - View Property</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/slider.js"></script>
@@ -30,7 +28,7 @@
 <body>
 <div id="wrapper">
   <div id="top">
-    <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
+    <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
     <div id="social-media">
       <p>For Additional Information<br>
         Please Call 123456789</p>
@@ -44,81 +42,94 @@
   </div>
   <div id="topnav" class="wrap">
     <ul id="nav">
-      <li class="active"><a href='index.html'><span>Home</span></a></li>
+      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
       <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
       <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
-      <li class="has-sub"><a href='advertise.html'><span>Advertise</span></a></li>
-      <li class="active"><a href='contact.html'><span>Contact</span></a></li>
+      <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+      <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.html'><span>About</span></a></li>
       <li class="has-sub"><a href="#"><span>Options</span></a>
 			<ul>
-                <li><a href='updateprop.jsp'>Update Property</a></li>
-                <li><a href='removeprop.jsp'>Remove Property</a></li>
-                <li><a href='removeuser.jsp'>Remove User</a></li>
-            	<li><a href='adminInbox.jsp'>Inbox</a></li>
-            	<li><a href='signoutadmin.jsp'>Sign Out</a></li>
+                <li><a href='addprop.jsp'>Add Property</a></li>
+                <li><a href='viewprop.jsp'>View Properties</a></li>
+                <li><a href='editprofile.jsp'>Edit Profile</a></li>
+                <li><a href='userinbox.jsp'>Inbox</a></li>
+                <li><a href='signoutuser.jsp'>Sign Out</a></li>
             </ul>
    	</li>
     </ul>
-  </div>
+ </div>
   <div id="content-wrapper">
-	      <div id="contact-form">
-	      <h1>Update Proerty</h1>
+    <div id="content">
+      <h1>Arrange Viewing</h1>
+      <div id="contact-form">
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
-          <li>
-              <label for="prop_id">Copy the property id you wish to update</label>
-              <input type="text" name="propID">
-          </li>
-          <li>
-              <label for="askprice">Enter New asking Price</label>
-              <input type="text" name="askp">
-          </li>
-          <li>
-              <label for="prop type">Enter New asking Property type</label>
-              <input type="text" name="proptype">
-          </li>
+            <li>
+              <label for="add">Enter The address you wish to view</label>
+              <input type="text" name="add">
+            </li>
+            <li>
+              <label for="email">E-mail</label>
+              <input type="text" name="email">
+            </li>
+            <li>
+              <label for="phone">Phone</label>
+              <input type="text" name="phone">
+            </li>
+            <li>
+               <label for="message" size=25%>Messsage</label>
+              <input type="text" name="mess" >  
+            </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="submit">
             </li>
           </ol>
         </form>
       </div>
-  </div>
-  </div>
-    <%  MongoClient m1 = new MongoClient("localhost");
+           <%  MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
-	DBCollection coll = db.getCollection("property_class");
+	DBCollection coll = db.getCollection("contact");
 	DBCursor valid;
+	DBCursor valid1;
 	BasicDBObject dbo = new BasicDBObject();
-    DBCursor cursor = coll.find();
-
+	if( request.getParameter("add") != null)
+	{
+    dbo.append("add", request.getParameter("add"));
+	}
+	if( request.getParameter("email") != null)
+	{
+    dbo.append("email", request.getParameter("email"));
+	}
+	if( request.getParameter("phone") != null)
+	{
+    dbo.append("phone", request.getParameter("phone"));
+	}
+	if( request.getParameter("mess") != null)
+	{
+    dbo.append("message",request.getParameter("mess"));
+	}
+    coll.insert(dbo);
+    System.out.println("Document inserted successfully"); 
+    DBCollection collec = db.getCollection("property_class");
+	DBCursor validto;
+	BasicDBObject dboc = new BasicDBObject();
+	DBCursor cursor2 = collec.find();
+	int i = 1;
+	try{
 	
-	  BasicDBObject updateQuery2 = new BasicDBObject();
-	  updateQuery2.append("$set", new BasicDBObject().append("Asking_price", request.getParameter("askp")));
-	  BasicDBObject updateQuery1 = new BasicDBObject();
-	  updateQuery1.append("$set", new BasicDBObject().append("property_type", request.getParameter("proptype")));
-
-	  BasicDBObject searchQuery3 = new BasicDBObject();
-	  searchQuery3.append("postcode", request.getParameter("propID"));
-
-	  coll.updateMulti(searchQuery3, updateQuery2);
-	  coll.updateMulti(searchQuery3, updateQuery1);
-	  //coll.remove(new BasicDBObject());
-
-    cursor = coll.find();
-		
-    int i = 1;
-		
-    while (cursor.hasNext()) { 
-       System.out.println("Updated Document: "+i); 
-       System.out.println(cursor.next()); 
-       i++;
+    while (cursor2.hasNext()) { 
+       out.println("<br/>Property: "+i); 
+       out.println("<br/>"+cursor2.next()); 
     }
-		
- }catch(Exception e){
-    System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	
+   }
+   finally{
+	   m1.close();
+   }
+
 	%>
+    </div>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
