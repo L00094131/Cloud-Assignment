@@ -29,7 +29,7 @@
 <body>
 <div id="wrapper">
   <div id="top">
-    <div id="logo"> <a href='index.jsp'><img src="images/logo.jpg"></a> </div>
+    <div id="logo"> <a href='index.html'><img src="images/logo.jpg"></a> </div>
     <div id="social-media">
       <p>For Additional Information<br>
         Please Call 123456789</p>
@@ -44,14 +44,9 @@
   <div id="topnav">
     <ul>
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>View Properties</span></a>
-            <ul>
-              <li><a href='forsale.jsp'>For Sale</a></li>
-              <li><a href='forrent.jsp'>For Rent</a></li>
-              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
-            </ul>
-          </li>
-          <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
+      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
+      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+      <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
       <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
@@ -73,38 +68,75 @@
               <input type="text" name="password">
             </li>
             <li>
-              <input class="submit" type="submit" name="Submit" value="Login">
+              <input class="submit" type="submit" value="Login">
+            </li>
+            <li>
+            <%
+               	MongoClient m1 = new MongoClient("localhost");
+            	DB db = m1.getDB("test");
+            	DBCollection coll = db.getCollection("sign_up_class");
+            	DBCollection coll1 = db.getCollection("administrators");
+            	DBCursor valid;
+            	DBCursor valid1;
+            	BasicDBObject dbo = new BasicDBObject();
+            	BasicDBObject dbo1 = new BasicDBObject();
+
+            	dbo1.append("Email",request.getParameter("Email"));
+                valid1 = coll1.find(dbo1);
+                dbo1.append("password",request.getParameter("password"));
+                valid1 = coll1.find(dbo1);
+                if(request.getParameter("Email")!= null && request.getParameter("password")!=null&&valid1.hasNext())
+                {
+                try{
+            		if(valid1.hasNext()){
+            			response.sendRedirect("admin.jsp");
+            		}
+            		else
+            			System.out.println("");
+            		}
+                
+            	
+            	catch(Exception exe){
+            		System.out.println("Error: " + exe.getStackTrace());
+            	}
+            	finally{
+            			valid1.close();
+            	}
+
+                }
+                else if(!valid1.hasNext())
+                	
+            	
+                dbo.append("Email",request.getParameter("Email"));
+                valid = coll.find(dbo);
+                dbo.append("password",request.getParameter("password"));
+                valid = coll.find(dbo);
+                if(request.getParameter("Email")!= null && request.getParameter("password")!=null&&valid.hasNext())
+                {
+                try{
+            		if(valid.hasNext()){
+            			response.sendRedirect("userpage.jsp");
+            		}
+            		else
+            			System.out.println("");
+            		}       	
+            	catch(Exception exe){
+            		System.out.println("Error: " + exe.getStackTrace());
+            	}
+            	finally{
+            			m1.close();
+            			valid.close();
+            	}
+
+                }
+                else if(!valid.hasNext())
+                	//response.sendRedirect("login.jsp");
+            %>
             </li>
           </ol>
       </div>
     </div>
   </div>
-   <%  MongoClient m1 = new MongoClient("localhost");
-	DB db = m1.getDB("test");
-	DBCollection coll = db.getCollection("sign_up_class");
-	DBCursor valid;
-	DBCursor valid1;
-	BasicDBObject dbo = new BasicDBObject();
-
-    dbo.append("Email",request.getParameter("Email"));
-    valid = coll.find(dbo);
-    dbo.append("password",request.getParameter("password"));
-    valid = coll.find(dbo);
-    try{
-		if(valid.hasNext()){
-			System.out.println("Login Successful");
-		}
-		else
-			System.out.println("Login Failed");
-		}
-	catch(Exception exe){
-		System.out.println("Error: " + exe.getStackTrace());
-	}
-	finally{
-			m1.close();
-			valid.close();
-		}
-	%>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>

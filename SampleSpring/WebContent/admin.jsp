@@ -1,3 +1,9 @@
+    <%@page import="com.mongodb.BasicDBObject"%>
+	<%@page import="com.mongodb.DB"%>
+	<%@page import="com.mongodb.DBCollection"%>
+	<%@page import="com.mongodb.DBCursor"%>
+	<%@page import="com.mongodb.MongoClient"%>
+
 <!doctype html>
 
 <html>
@@ -33,14 +39,8 @@
   <div id="topnav" class="wrap">
     <ul id="nav">
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>View Properties</span></a>
-            <ul>
-              <li><a href='forsale.jsp'>For Sale</a></li>
-              <li><a href='forrent.jsp'>For Rent</a></li>
-              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
-            </ul>
-      </li>
+      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
+      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
       <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
@@ -50,6 +50,7 @@
                 <li><a href='removeprop.jsp'>Remove Property</a></li>
                 <li><a href='removeuser.jsp'>Remove User</a></li>
             	<li><a href='adminInbox.jsp'>Inbox</a></li>
+            	<li><a href='admin_sign_up.jsp'>Add Administrator</a></li>
             	<li><a href='signoutadmin.jsp'>Sign Out</a></li>
             </ul>
    	</li>
@@ -57,7 +58,7 @@
   </div>
   <div id="content-wrapper">
     <div id="content">
-      <h1>Login successful</h1>
+      <h1>Welcome</h1>
       <br/>
       </div>
   </div>
