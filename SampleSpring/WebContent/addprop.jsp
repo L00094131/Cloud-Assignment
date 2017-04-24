@@ -136,7 +136,11 @@
 	dbo.append("Features", request.getParameter("feat"));
 	dbo.append("BER_Rating", request.getParameter("ber"));
 	dbo.append("Asking_Price", request.getParameter("askp"));
-	coll.insert(dbo);
+	   if(dbo!=null)
+	   {
+	     coll.insert(dbo);
+	   }
+   
 	%>
 	
 	<div id="rightside">
