@@ -71,8 +71,8 @@
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
           <li>
-              <label for="user_id">Copy the User id you wish to delete</label>
-              <input type="text" name="userID">
+              <label for="email">Copy the User email you wish to delete</label>
+              <input type="text" name="email">
             </li>
               
             <li>
@@ -82,16 +82,18 @@
         </form>
       </div>
   </div>
-  </div>
-   <% MongoClient m1 = new MongoClient("localhost");
+     <% MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
 	DBCollection coll = db.getCollection("sign_up_class");
 	DBCursor valid;
 	BasicDBObject dbo = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
     //db.put("Address1", "drumowna");
-    dbo.put("ObjectId", request.getParameter("userID"));
+    dbo.put("Email", request.getParameter("email"));
+    if(request.getParameter("email")!=null)
+    {
     DBObject myDoc = coll.findAndRemove(dbo);
+    }
     //coll.remove(myDoc);
     System.out.println("Document inserted successfully"); 
     DBCollection collec = db.getCollection("sign_up_class");
@@ -102,7 +104,7 @@
 	try{
 	
     while (cursor2.hasNext()) { 
-       out.println("<br/>Property: "+i); 
+       out.println("<br/>Property: "+i++); 
        out.println("<br/>"+cursor2.next()); 
     }
 	
@@ -112,6 +114,7 @@
    }
 
 	%>
+  </div>
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
