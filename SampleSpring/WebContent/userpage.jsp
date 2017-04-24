@@ -49,7 +49,8 @@
             <li><a href='viewprop.jsp'>View Properties</a></li>
             <li><a href='editprofile.jsp'>Edit Profile</a></li>
             <li><a href='userinbox.jsp'>Inbox</a></li>
-            <li><a href='signoutadmin.jsp'>Sign Out</a></li>
+            <li><a href='arrangeviewing.jsp'>Arrange Viewing</a></li>
+            <li><a href='signoutuser.jsp'>Sign Out</a></li>
       </ul>
       </li>
     </ul>

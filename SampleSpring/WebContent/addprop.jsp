@@ -53,8 +53,16 @@
     <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
     <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
     <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
-    <li class="has-sub"><a href='login.jsp'><span>Login</span></a></li>
-  </ul>
+    <li class="has-sub"><a href="#"><span>Options</span></a>
+			<ul>
+            <li><a href='addprop.jsp'>Add Property</a></li>
+            <li><a href='viewprop.jsp'>View Properties</a></li>
+            <li><a href='editprofile.jsp'>Edit Profile</a></li>
+            <li><a href='userinbox.jsp'>Inbox</a></li>
+            <li><a href='arrangeviewing.jsp'>Arrange Viewing</a></li>
+            <li><a href='signoutuser.jsp'>Sign Out</a></li>
+            </ul>
+   	</li>  </ul>
 </div>
 <div id="content-wrapper">
   <div id="content">
