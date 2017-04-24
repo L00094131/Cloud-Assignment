@@ -86,7 +86,7 @@
             </li>
             <li>
               <label for="password">Password</label>
-              <input type="text" name="password">
+              <input type="password" name="password">
             </li>
             <li>
               <input class="submit" type="submit" name="Submit" value="submit">

@@ -44,8 +44,13 @@
   <div id="topnav">
     <ul>
       <li class="active"><a href='index.jsp'><span>Home</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Sale</span></a></li>
-      <li class="has-sub"><a href='#'><span>For Rent</span></a></li>
+          <li class="has-sub"><a href='#'><span>View Properties</span></a>
+            <ul>
+              <li><a href='forsale.jsp'>For Sale</a></li>
+              <li><a href='forrent.jsp'>For Rent</a></li>
+              <li><a href='holidayhomes.jsp'>Holiday Homes</a></li>
+            </ul>
+          </li> 
       <li class="has-sub"><a href='advertise.jsp'><span>Advertise</span></a></li>
       <li class="active"><a href='contact.jsp'><span>Contact</span></a></li>
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
@@ -65,7 +70,7 @@
             </li>
             <li>
               <label for="password">Password</label>
-              <input type="text" name="password">
+              <input type="password" name="password">
             </li>
             <li>
               <input class="submit" type="submit" value="Login">

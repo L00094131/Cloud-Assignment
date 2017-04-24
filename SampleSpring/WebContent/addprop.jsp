@@ -80,11 +80,11 @@
               <input type="text" name="add2">
             </li>
             <li>
-              <label for="address3">Address Line 3</label>
+              <label for="address3">Town</label>
               <input type="text" name="add3">
             </li>
             <li>
-              <label for="address3">Address Line 4</label>
+              <label for="address3">County</label>
               <input type="text" name="add4">
             </li>
             <li>
