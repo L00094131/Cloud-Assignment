@@ -65,7 +65,7 @@
 	DBCursor valid;
 	BasicDBObject dbo = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
-	dbo.put("property_type", "rent");
+	dbo.put("property_type", "for rent");
     //db.put("Address1", "drumowna");
     DBCursor cursor = coll.find(dbo);
 	
@@ -76,8 +76,10 @@
 	try{
 	
     while (cursor.hasNext()) { 
-       out.println("<br/>Property: "+i); 
-       out.println("<br/>"+cursor.next()); 
+       out.println("<h2>Property: "+i++ +"</h2>"); 
+       out.println("<a href='login.jsp'>Login</a> to arrange a viewing.</br>"); 
+       out.println("<br/>"+cursor.next());
+       out.println("<br/>");
     }
 	
    }

@@ -92,7 +92,7 @@
               <input type="text" name="postc">
             </li>
             <li>
-              <label for="prop-type">property type</label>
+              <label for="prop-type">Property Type (for sale, for rent, holiday home)</label>
               <input type="text" name="prop-type">
             </li>
             <li>

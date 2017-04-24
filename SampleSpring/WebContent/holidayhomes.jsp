@@ -77,8 +77,10 @@
 	try{
 	
     while (cursor.hasNext()) { 
-       out.println("<br/>Property: "+i); 
-       out.println("<br/>"+cursor.next()); 
+        out.println("<h2>Property: "+i++ +"</h2>"); 
+        out.println("<a href='login.jsp'>Login</a> to arrange a viewing.</br>"); 
+        out.println("<br/>"+cursor.next());
+        out.println("<br/>");
     }
 	
    }

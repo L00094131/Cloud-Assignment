@@ -58,7 +58,6 @@
   <div id="content-wrapper">
     <div id="content">
       <h1>Properties For Sale</h1>
-
   <% MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
 	DBCollection coll = db.getCollection("property_class");
@@ -75,8 +74,11 @@
 	try{
 	
     while (cursor.hasNext()) {
-       out.println("<br/>Property: "+i); 
+       out.println("<h2>Property: "+i++ +"</h2>"); 
+       out.println("<a href='login.jsp'>Login</a> to arrange a viewing.</br>"); 
        out.println("<br/>"+cursor.next());
+       out.println("<br/>");
+
     }
 	
    }
@@ -85,7 +87,7 @@
    }
        
 	%>
-
+</br>
 
 </div>
   <div id="footer">
