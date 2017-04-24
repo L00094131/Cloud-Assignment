@@ -55,41 +55,55 @@
       <li class="has-sub"><a href='about.jsp'><span>About</span></a></li>
       <li class="has-sub"><a href="#"><span>Options</span></a>
 			<ul>
-            <li><a href='addprop.jsp'>Add Property</a></li>
-            <li><a href='viewprop.jsp'>View Properties</a></li>
-            <li><a href='editprofile.jsp'>Edit Profile</a></li>
-            <li><a href='userinbox.jsp'>Inbox</a></li>
-            <li><a href='arrangeviewing.jsp'>Arrange Viewing</a></li>
-            <li><a href='signoutuser.jsp'>Sign Out</a></li>
+                <li><a href='addprop.jsp'>Add Property</a></li>
+                <li><a href='viewprop.jsp'>View Properties</a></li>
+                <li><a href='editprofile.jsp'>Edit Profile</a></li>
+                <li><a href='userIndox.jsp'>Inbox</a></li>
+                <li><a href='signoutuser.jsp'>Sign Out</a></li>
             </ul>
    	</li>
     </ul>
-  </div>
+   </div>
   <div id="content-wrapper">
-    <div id="content">
-      <h1>Inbox</h1>
-      <br/>
-     <%MongoClient m1 = new MongoClient("localhost");
+	      <div id="contact-form">
+	      <h1>Update Property</h1>
+        <form method="post" action="" name="form1" id="my_contact_form">
+          <ol>
+          <li>
+              <label for="email">Enter E-mail</label>
+              <input type="text" name="em">
+          </li>
+            <li>
+              <input class="submit" type="submit" name="Submit" value="submit">
+            </li>
+          </ol>
+        </form>
+      </div>
+     <%
+     MongoClient m1 = new MongoClient("localhost");
 	DB db = m1.getDB("test");
 	DBCollection coll = db.getCollection("admin_replies");
 	DBCursor valid;
 	BasicDBObject dbo = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
-	dbo.put("E_mail", "eugene@gmail.com");
+	if(request.getParameter("em")!=null)
+	{
+	dbo.put("E_mail", request.getParameter("em"));
     //db.put("Address1", "drumowna");
     DBCursor cursor = coll.find(dbo);
-    
 	int i = 1;
-	try{
+
 	
     while (cursor.hasNext()) { 
+
        out.println("<br/>Email: "+i); 
        out.println(" <br/>"+cursor.next().toString()); 
-    }
-   }
-   finally{
-	   m1.close();
-   }
+    	}
+	}
+   
+	  
+
+   
        
     %>
       </div>
