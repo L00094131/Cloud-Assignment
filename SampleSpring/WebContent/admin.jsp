@@ -59,9 +59,6 @@
   <div id="content-wrapper">
     <div id="content">
       <h1>Welcome</h1>
-      <p>Admins of our site will have the ability to <a href="updateprop.jsp">update</a> and <a href="removeprop.jsp">remove</a>
-      properties from the site, <a href="removeuser.jsp">remove</a> users from the site, check their <a href="adminInbox.jsp">inbox</a>
-      and <a href="admin_sign_up.jsp">add new administrators</a> to the site.  
       <br/>
       </div>
   </div>

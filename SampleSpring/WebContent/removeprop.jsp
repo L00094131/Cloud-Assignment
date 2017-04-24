@@ -90,7 +90,7 @@
 	BasicDBObject dbo = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
     //db.put(-iddress1", "drumowna");
-    dbo.append("Address1", request.getParameter("post"));
+    dbo.append("postcode", request.getParameter("post"));
     if(request.getParameter("post")!=null)
     {
     DBObject myDoc = coll.findAndRemove(dbo);

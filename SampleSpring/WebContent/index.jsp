@@ -111,8 +111,6 @@
           <h1>Welcome To Build 'R' Buy</h1>
           <h2>Who are we?</h2>
           <p>BuildRBuy.ie, the North-Wests largest property website, was founded in 2010 by <br/>Frank Sinatra's 2nd Cousin Twice Removed. Build R Buy has revolutionised </br> how consumers in Ireland find property. We have various sections - for sale, </br>for rent, holiday homes. Today, thousands of customers in Ireland and across the</br> world regularly advertise properties on the site.</p>
-               
-          
           <h2>Use our calculator function</h2>
           <p>Our price calculator use a state of the art algorithm to calculate the price of<br/>your property. Enter in your house details below to calculate your price</p>		
           
@@ -131,7 +129,7 @@
             <li>
               <input class="submit" type="submit" name="submit" value="Calculate">
             </li>
-                        <li>
+             <li>
         <%
 			if (request.getParameter("submit") != null) {
 		%>

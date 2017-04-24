@@ -43,7 +43,6 @@
   </div>
   <div id="topnav" class="wrap">
     <ul id="nav">
-      <li class="active"><a href='index.jsp'><span>Home</span></a></li>
     <li class="active"><a href='index.jsp'><span>Home</span></a></li>
           <li class="has-sub"><a href='#'><span>View Properties</span></a>
             <ul>
