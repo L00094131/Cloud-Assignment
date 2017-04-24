@@ -92,6 +92,7 @@
               <input class="submit" type="submit" name="Submit" value="submit">
             </li>
           </ol>
+          <p>Already have an account? Login <a href='login.jsp'>here</a>.</p>          
         </form>
       </div>
     </div>

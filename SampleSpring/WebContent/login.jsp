@@ -55,7 +55,7 @@
   <div id="content-wrapper">
     <div id="advertise-content">
       <h1>Login</h1>
-      <p>Please enter your username and password below</p>
+      <p>Please enter your E-mail and password below</p>
       <div id="contact-form">
  		<form method="POST" action="" name="form3" id="login">
  		<ol>
@@ -134,6 +134,8 @@
             %>
             </li>
           </ol>
+      <p>Don't have an account? Sign up <a href='signup.jsp'>here</a>.</p>
+          
       </div>
     </div>
   </div>
