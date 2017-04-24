@@ -65,14 +65,14 @@
             </ul>
    	</li>
     </ul>
-  </div>
+  </div>  
   <div id="content-wrapper">
 	      <div id="contact-form">
 	      <h1>Update Property</h1>
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
           <li>
-              <label for="prop_id">Copy the property id you wish to update</label>
+              <label for="prop_postcode">Copy the property postcode you wish to update</label>
               <input type="text" name="propID">
           </li>
           <li>
@@ -90,17 +90,17 @@
         </form>
       </div>
   </div>
-  </div>
-    <%  MongoClient m1 = new MongoClient("localhost");
-	DB db = m1.getDB("test");
-	DBCollection coll = db.getCollection("property_class");
-	DBCursor valid;
-	BasicDBObject dbo = new BasicDBObject();
-    DBCursor cursor = coll.find();
+  
+    <%  	
+	try{
+    	MongoClient m1 = new MongoClient("localhost");
 
-	
+    	DB db = m1.getDB("test");
+     	DBCollection coll = db.getCollection("property_class");
+     	DBCursor cursor;
+     	
 	  BasicDBObject updateQuery2 = new BasicDBObject();
-	  updateQuery2.append("$set", new BasicDBObject().append("Asking_price", request.getParameter("askp")));
+	  updateQuery2.append("$set", new BasicDBObject().append("Asking_Price", request.getParameter("askp")));
 	  BasicDBObject updateQuery1 = new BasicDBObject();
 	  updateQuery1.append("$set", new BasicDBObject().append("property_type", request.getParameter("proptype")));
 
@@ -120,13 +120,30 @@
        System.out.println(cursor.next()); 
        i++;
     }
-		
+	}finally{}
+	
+    
+    MongoClient m1 = new MongoClient("localhost");
+    DB db = m1.getDB("test");
+    DBCollection coll = db.getCollection("property_class");
+    DBCursor cursor1 = coll.find();  
+ 	int b = 1;
+ 	try{
+     	while (cursor1.hasNext()) {
+        	out.println("<br/>Property: "+b); 
+        	out.println("<br/>" +cursor1.next());
+     	}     	
  }catch(Exception e){
     System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+ }finally{
+	 m1.close();
+}
 	%>
+	
+	
   <div id="footer">
     <p>&copy;Copyright 2017 &bull; All Rights Reserved &bull; BSC Comp Design Company &bull; 1234 Main Street Donegal </p>
   </div>
-</div>
+
 </body>
 </html>
