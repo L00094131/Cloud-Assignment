@@ -49,21 +49,15 @@
             <li><a href='viewprop.jsp'>View Properties</a></li>
             <li><a href='editprofile.jsp'>Edit Profile</a></li>
             <li><a href='userinbox.jsp'>Inbox</a></li>
-            <li><a href='signoutadmin.jsp'>Sign Out</a></li>
+            <li><a href='arrangeviewing.jsp'>Arrange Viewing</a></li>
+            <li><a href='signoutuser.jsp'>Sign Out</a></li>
       </ul>
       </li>
     </ul>
   </div>
   <div id="content-wrapper">
     <div id="content">
-      <h1>Login Successful</h1>
-      <p>Welcome to the user home page. We have designed the site to make it as easy as possible for our users to add 
-      their properties to our database. Users can add properties for sale, for rent or holiday homes they want to advertise 
-      on the website. From this page you will be able to <a href="addprop.jsp">add</a> a property,
-       <a href="editprofile.jsp">edit</a> your profile information, check your <a href="userinbox.jsp">inbox</a> and 
-       <a href="signoutadmin.jsp">sign out.</a> Click on a link to to be taken to your desired location or view your 
-       options from the options drop down list in the above panel.  
-
+      <h1>Login successful - Welcome INSERT NAME HERE</h1>
     </div>
   </div>
   <div id="footer">
