@@ -71,8 +71,8 @@
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
           <li>
-              <label for="prop_id">Copy the property id you wish to delete</label>
-              <input type="text" name="propID">
+              <label for="post">Copy the property postcode you wish to delete</label>
+              <input type="text" name="post">
             </li>
               
             <li>
@@ -89,9 +89,12 @@
 	DBCursor valid;
 	BasicDBObject dbo = new BasicDBObject();
 	//BasicDBObject db = new BasicDBObject();
-    //db.put("Address1", "drumowna");
-    dbo.put("ObjectId", request.getParameter("propID"));
+    //db.put(-iddress1", "drumowna");
+    dbo.append("Address1", request.getParameter("post"));
+    if(request.getParameter("post")!=null)
+    {
     DBObject myDoc = coll.findAndRemove(dbo);
+    }
     //coll.remove(myDoc);
     System.out.println("Document inserted successfully"); 
     DBCollection collec = db.getCollection("property_class");
@@ -102,7 +105,7 @@
 	try{
 	
     while (cursor2.hasNext()) { 
-       out.println("<br/>Property: "+i); 
+       out.println("<br/>Property: "+i++); 
        out.println("<br/>"+cursor2.next()); 
     }
 	
