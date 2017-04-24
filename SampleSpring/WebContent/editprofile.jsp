@@ -71,8 +71,8 @@
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
           <li>
-              <label for="pass">enter password</label>
-              <input type="text" name="pass">
+              <label for="pass"> Enter password</label>
+              <input type="password" name="pass">
           </li>
           <li>
               <label for="askprice">Enter New ephoneNumber</label>

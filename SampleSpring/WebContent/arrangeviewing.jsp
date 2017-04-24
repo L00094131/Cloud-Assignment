@@ -71,8 +71,8 @@
         <form method="post" action="" name="form1" id="my_contact_form">
           <ol>
             <li>
-              <label for="add">Enter the address you wish to view</label>
-              <input type="text" name="add">
+              <label for="post">Enter the postcode you wish to view</label>
+              <input type="text" name="post">
             </li>
             <li>
               <label for="email">E-mail</label>
@@ -98,23 +98,20 @@
 	DBCursor valid;
 	DBCursor valid1;
 	BasicDBObject dbo = new BasicDBObject();
-	if( request.getParameter("add") != null)
-	{
-    dbo.append("add", request.getParameter("add"));
-	}
-	if( request.getParameter("email") != null)
-	{
+
+    dbo.append("post", request.getParameter("post"));
+
+
     dbo.append("email", request.getParameter("email"));
-	}
-	if( request.getParameter("phone") != null)
-	{
+
     dbo.append("phone", request.getParameter("phone"));
-	}
-	if( request.getParameter("mess") != null)
-	{
+
     dbo.append("message",request.getParameter("mess"));
-	}
+
+    if(dbo!=null)
+    {
     coll.insert(dbo);
+    }
     System.out.println("Document inserted successfully"); 
     DBCollection collec = db.getCollection("property_class");
 	DBCursor validto;
